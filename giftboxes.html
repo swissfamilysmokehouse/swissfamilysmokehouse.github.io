@@ -1,25 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-h1 {text-align: center;}
-img.header {
-    padding: 0;
-    display: block;
-    margin: 0 auto;
-    max-height: 50%;
-    max-width: 50%;
-}
-</style>
+<link href="css/default.css" rel="stylesheet" type="text/css">
 </head>
 <body style="background-color:maroon;">
 <h1 style="color:Orange;">Under Construction...Gift Boxes</h1>
-<h2 style="color:White;">	We have a variety of gift boxes available. Please give us a call at (608)882-4030 to order yours today!</h2>
+<h2 style="color:White;">	We have a variety of gift boxes available. Please give us a call at (608)882-4030 or stop by the shop during business hours to order yours today!</h2>
 
 <p><a href="cheese.html">Cheese</a>&nbsp&nbsp
 <a href="meat.html">Meat</a>&nbsp&nbsp
 <a href="index.html">Home</a>
 </p>
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">$25</div>
+    <img src="images/exampleBox.jpg" style="width:100%">
+    <div class="text">The Playoffs Pack - 2x 8oz. sausages (Regular or Garlic), 2x 8oz. cheeses (Mild Cheddar, Jalapeno, or Gouda), 2x cheese spreads (Sharp Cheddar, Bacon, Port Wine, or Garden Veggie)</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">$45</div>
+    <img src="images/exampleBox.jpg" style="width:100%">
+    <div class="text">The Ultimate Playoffs Pack -  2x 22oz. Smoked Beef Sticks, 2x 8oz. sausages (Regular or Garlic), 2x 8oz. cheeses (Mild Cheddar, Jalapeno, Gouda), 4x cheese spreads (Sharp Cheddar, Bacon, Port Wine, Garden Veggie</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="images/exampleBox.jpg" style="width:100%">
+    <div class="text">Example Box</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+
 
 <table style="color:Orange;">
 <tr>
@@ -48,11 +107,7 @@ img.header {
 <td>Tasty Treats</td>
 </tr>
 <tr>
-<td>A Delightful Thought</td>
-<td>Sweet N' Hot Ham</td>
 <td>Swiss Family Beef Snacks</td>
-<tr>
-<td>Game Time</td>
 <td>The Right Stuff</td>
 <td>Munchies N' More</td>
 </tr>
